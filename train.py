@@ -4,7 +4,7 @@ from icecream import ic
 import torch
 from torch import nn, optim
 from torch.utils.data import DataLoader
-from torchvision.datasets import FashionMNIST
+from torchvision.datasets import FashionMNIST 
 from torchvision.transforms import Compose, ToTensor, Normalize
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -36,7 +36,7 @@ def fashion(batch_size = 64):
     test_loader = DataLoader(
         dataset=test,
         batch_size=batch_size,
-        shuffle=True
+        shuffle=False
     )
     return train_loader, test_loader
 
@@ -94,7 +94,7 @@ def go(model, opti, loss, epochs, loaders):
 
 if __name__ == '__main__':
 
-    epochs = 3
+    epochs = 21
     learning_rate = 0.001
     cnn = Net(
         in_channels=1,
